@@ -1,64 +1,82 @@
-variable "azurerm_resource_group" {
- type = string
- default = "terraform-rg"
+variable "resource_group_name_01" {
+  type    = string
+  default = "terraform-resource-group-01"
 }
 
-variable "azurerm_virtual_network" {
-  type =  string
-  default = "terraform-vnet"
-  
+variable "resource_group_name_02" {
+  type    = string
+  default = "terraform-resource-group-02"
 }
 
-
-variable "address_space" {
- type =  list(string)
- default = [ "10.0.0.0/16" ]
+variable "location" {
+  type    = string
+  default = "eastus"
 }
 
-variable "azurerm_subnet" {
-  type = string
-  default = terraform-snet
+variable "storageaccountname" {
+  type    = string
+  default = "terraformsa20241104"
 }
 
-variable "address_prefixes" {
- type =  list(string)
- default = [ "10.0.2.0/24" ]
+variable "tags" {
+  type = map(string)
+  default = {
+    "Project"     = "SAANVIK IT"
+    "Environment" = "Development"
+  }
 }
 
-variable "azurerm_public_ip" {
-    type = string
-    default = "terraform-pip"
-  
-}
-variable "azurerm_network_interface" {
-    type = string
-    default = "terrafrom-nic"
-  
-}
-variable "azurerm_network_security_group" {
-    type = string
-    default = "terrafom-nsg"
-  
+variable "virtual_network_name" {
+  type    = string
+  default = "terraform-vnet-01"
 }
 
-variable "azurerm_subnet_network_security_group_association" {
-  type = string
-  default = "terraform-nsg-assioation"
+variable "virtual_network_address" {
+  type    = list(string)
+  default = ["10.0.0.0/24"]
 }
 
-variable "azurerm_windows_virtual_machine" {
-    type = string
-    default = "terraform-vm"
-  
+variable "subnet_name" {
+  type    = string
+  default = "terraform-subnet"
 }
 
-variable "azurerm_managed_disk" {
-  type = string
-  default = "managed-disk"
+variable "subnet_address" {
+  type    = list(string)
+  default = ["10.0.0.0/24"]
 }
 
-variable "azurerm_virtual_machine_data_disk_attachment" {
-    type = string
-    default = ""
-  
+variable "pip_name" {
+  type    = string
+  default = "terraform-pip"
+}
+
+variable "nic_name" {
+  type    = string
+  default = "terraform-nic"
+}
+
+variable "nsg_name" {
+  type    = string
+  default = "terraform-nsg"
+}
+
+variable "virtual_machine_name" {
+  type    = string
+  default = "terraform-vm"
+}
+
+variable "virtual_machine_size" {
+  type    = string
+  default = "Standard_B1s"
+}
+
+variable "adminUser" {
+  type    = string
+  default = "vinod"
+}
+
+variable "adminPassword" {
+  type    = string
+  default = "Vinod123456789"
 }
